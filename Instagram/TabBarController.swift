@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth //5.6で追加
+import FirebaseAuth
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
@@ -34,6 +36,16 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             return true
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) { //5.6で追加
+         super.viewDidAppear(animated)//5.6で追加
+        if Auth.auth().currentUser == nil {//5.6で追加
+                    // ログインしていないときの処理
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+                        self.present(loginViewController!, animated: true, completion: nil)
+                }
+    }
+
 }
     /*
     // MARK: - Navigation
