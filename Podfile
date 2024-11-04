@@ -13,3 +13,4 @@ pod 'FirebaseStorageUI', '13.2.0'
 pod 'SVProgressHUD','2.3.1'
 pod 'ZLImageEditor', '2.0.1'
 end
+紐付け

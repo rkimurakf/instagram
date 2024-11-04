@@ -9,15 +9,16 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class PostData: NSObject {
+class PostData: NSObject { //NSObjectとはObjective-Cのルートクラスのことです。
     var id = ""
     var name = ""
     var caption = ""
     var date = ""
     var likes: [String] = []
     var isLiked: Bool = false
+    var comments: [String] = []//課題で追加
 
-    init(document: QueryDocumentSnapshot) {
+    init(document: QueryDocumentSnapshot) {//initメソッドは主にクラスのプロバティの初期値を設定するときに使用します
         self.id = document.documentID
 
         let postDic = document.data()
@@ -39,6 +40,10 @@ class PostData: NSObject {
         if let likes = postDic["likes"] as? [String] {
             self.likes = likes
         }
+        
+        if let comments = postDic["comments"] as? [String] { //課題で追加
+                    self.comments = comments
+                }
 
         if let myid = Auth.auth().currentUser?.uid {
             // likesの配列の中にmyidが含まれているかチェックすることで、自分がいいねを押しているかを判断
@@ -47,6 +52,16 @@ class PostData: NSObject {
                 self.isLiked = true
             }
         }
+        
+    }
+    //課題で追加
+    static func createPostDictionary(name: String, caption: String) -> [String: Any] {
+        return [
+            "name": name,
+            "caption": caption,
+            "date": FieldValue.serverTimestamp(),
+            "comments": [] // 追記課題
+        ]
     }
 
     override var description: String {

@@ -24,6 +24,7 @@
 		EA5A4FC22CD3CC3600551D9D /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A4FC12CD3CC3600551D9D /* PostData.swift */; };
 		EA5A4FC52CD3CCA000551D9D /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5A4FC42CD3CCA000551D9D /* PostTableViewCell.xib */; };
 		EA5A4FC62CD3CCA000551D9D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A4FC32CD3CCA000551D9D /* PostTableViewCell.swift */; };
+		EA5A4FC82CD4ABF500551D9D /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A4FC72CD4ABF500551D9D /* CommentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		EA5A4FC12CD3CC3600551D9D /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		EA5A4FC32CD3CCA000551D9D /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		EA5A4FC42CD3CCA000551D9D /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		EA5A4FC72CD4ABF500551D9D /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		FDC401B9F61E1B9F9CC49C25 /* Pods-Instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.release.xcconfig"; path = "Target Support Files/Pods-Instagram/Pods-Instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 				EA06E8072CD273E400E322BB /* ImageSelectViewController.swift */,
 				EA5A4FC12CD3CC3600551D9D /* PostData.swift */,
 				EA5A4FC32CD3CCA000551D9D /* PostTableViewCell.swift */,
+				EA5A4FC72CD4ABF500551D9D /* CommentViewController.swift */,
 				EA5A4FC42CD3CCA000551D9D /* PostTableViewCell.xib */,
 				EA06E7F52CD272AF00E322BB /* Main.storyboard */,
 				EA06E7F82CD272B000E322BB /* Assets.xcassets */,
@@ -246,6 +249,7 @@
 				EA06E80C2CD2740F00E322BB /* SettingViewController.swift in Sources */,
 				EA5A4FC22CD3CC3600551D9D /* PostData.swift in Sources */,
 				EA06E8042CD273AF00E322BB /* LoginViewController.swift in Sources */,
+				EA5A4FC82CD4ABF500551D9D /* CommentViewController.swift in Sources */,
 				EA06E7F02CD272AF00E322BB /* AppDelegate.swift in Sources */,
 				EA06E7F22CD272AF00E322BB /* SceneDelegate.swift in Sources */,
 				EA5A4FC02CD3C7FD00551D9D /* Const.swift in Sources */,

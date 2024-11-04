@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PostTableViewCellDelegate, CommentViewControllerDelegate{ //課題で追加
     @IBOutlet weak var tableView: UITableView!
     
     
@@ -69,7 +69,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セルを取得してデータを設定する
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostTableViewCell
         cell.setPostData(postArray[indexPath.row])
-        
+        cell.delegate = self //課題で追加
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleLikeButton(_:)), for: .touchUpInside)
         
@@ -104,4 +104,33 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    
+    //課題で追加 ボタンが押された時の処理
+    func didTapCommentButton(postData: PostData) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let commentVC = storyboard.instantiateViewController(withIdentifier: "CommentViewController") as! CommentViewController
+            commentVC.postData = postData // 課題で追加
+            commentVC.delegate = self // 課題で追加
+        if let navController = self.navigationController {
+            navController.pushViewController(commentVC, animated: true)
+        } else {
+            print("DEBUG_PRINT: navigationController is nil")
+        }
+    }
+    
+    
+    // 課題で追加
+    func didAddComment(postData: PostData) {
+        // 新しいコメントが追加された後の処理（必要に応じてリロードなど）
+        print("コメントが追加されました")
+        self.tableView.reloadData()
+    }
+    //課題で追加
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+//課題で追加
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        0
+    }
 }
